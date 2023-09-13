@@ -97,5 +97,3 @@ function fnActualizarTabla(){
 
     divTabla.innerHTML =  buff.join('\n');
 }
-
-//const jose = new User('jose', 'jose@m.com', 34);
