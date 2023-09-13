@@ -3,6 +3,7 @@ const g_users = [];
 
 
 function init(){
+    // imprime por consola cuando haya terminado de cargarse
     console.log('%capp.js line:3 object', 'color: #007acc;', "Pagina completamente cargada");
     fnActualizarTabla();
 }
