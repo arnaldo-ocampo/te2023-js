@@ -5,8 +5,34 @@ const g_users = [];
 function init(){
     // imprime por consola cuando haya terminado de cargarse
     console.log('%capp.js line:3 object', 'color: #007acc;', "Pagina completamente cargada");
+    
+    const strUsers = localStorage.getItem("tmp-users");
+
+    console.log('%capp.js line:11 strUsers', 'color: #007acc;', strUsers);
+    const users = JSON.parse(strUsers);
+
+    console.log('%capp.js line:14 users', 'color: #007acc;', users);
+    for(let u of users){
+        g_users.push(u);
+    }
+    
     fnActualizarTabla();
+
+
+    fnPersistirDatos();
+
+
 }
+
+function fnPersistirDatos(){
+    console.log("Programando una cron");
+    let inc = 0;
+    setInterval(function(){
+        console.log('%capp.js line:29', 'color: #007acc;', "Timeout ejecutado: " + inc++);
+        fnPersistirUsers();
+    }, 3000 );
+}
+
 
 function fnCrearUsuario(){
     console.log('%capp.js line:4', 'color: #007acc;', "a punto de crear un nuevo usuario!!!!");
